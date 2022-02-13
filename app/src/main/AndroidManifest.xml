@@ -10,10 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ControlInventario">
         <activity
-            android:name=".CatalogoProducto"
+            android:name=".ConsultaActivity"
             android:exported="false" />
         <activity
-            android:name=".SalidadProductos"
+            android:name=".TrasladoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VentaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CompraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OperacionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CatalogoActivity"
             android:exported="false" />
         <activity
             android:name=".MantenimientoProducto"

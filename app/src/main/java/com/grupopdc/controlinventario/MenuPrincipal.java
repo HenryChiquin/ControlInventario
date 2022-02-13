@@ -1,33 +1,52 @@
 package com.grupopdc.controlinventario;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 public class MenuPrincipal extends AppCompatActivity {
-
+    private CardView cardViewRegistro,cardViewMantenimiento,cardViewConsulta, cardViewOperacion,cardViewCatalogo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
+
+        cardViewRegistro = findViewById(R.id.cardView_Registro);
+        cardViewMantenimiento = findViewById(R.id.cardView_Mantenimiento);
+        cardViewConsulta = findViewById(R.id.cardView_Consulta);
+        cardViewOperacion = findViewById(R.id.cardView_Operaciones);
+        cardViewCatalogo = findViewById(R.id.cardView_Catalogo);
+
+        cardViewRegistro.setOnClickListener(View -> getRegistroProducto());
+        cardViewMantenimiento.setOnClickListener(View ->MantenimientoProducto());
+        cardViewCatalogo.setOnClickListener(View ->catalogoProducto());
+        cardViewOperacion.setOnClickListener(View ->operacionProducto());
+        cardViewConsulta.setOnClickListener(View ->consultaProducto());
     }
 
 
-    public void IngresarProductos(View view){
-        Intent intent = new Intent(getApplicationContext(), IngresoProducto.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+    public void getRegistroProducto(){
+        Intent intent = new Intent(getApplicationContext(), IngresoProducto.class);
         startActivity(intent);
     }
-    public void MantenimientoProducto(View view){
-        Intent intent = new Intent(getApplicationContext(), MantenimientoProducto.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+    public void MantenimientoProducto(){
+        Intent intent = new Intent(getApplicationContext(), MantenimientoProducto.class);
         startActivity(intent);
     }
-    public void SalidaProducto(View view){
-        Intent intent = new Intent(getApplicationContext(), SalidadProductos.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    public void catalogoProducto(){
+        Intent intent = new Intent(getApplicationContext(), CatalogoActivity.class);
+        startActivity(intent);
+    }
 
+    public void operacionProducto(){
+        Intent intent = new Intent(getApplicationContext(), OperacionesActivity.class);
+        startActivity(intent);
+    }
+
+    public void consultaProducto(){
+        Intent intent = new Intent(getApplicationContext(), ConsultaActivity.class);
         startActivity(intent);
     }
 }

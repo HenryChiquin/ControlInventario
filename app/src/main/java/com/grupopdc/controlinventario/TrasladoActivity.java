@@ -5,17 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-public class IngresoProducto extends AppCompatActivity {
-    private ImageView imgViewRegresarRegistro;
+public class TrasladoActivity extends AppCompatActivity {
+    private ImageView imgViewRegresarTraslado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingreso_producto);
+        setContentView(R.layout.activity_traslado);
 
 
-        imgViewRegresarRegistro = findViewById(R.id.imgViewRegresarRegistro);
+        imgViewRegresarTraslado = findViewById(R.id.imgViewRegresarTraslado);
 
-        imgViewRegresarRegistro.setOnClickListener(view -> {
+        imgViewRegresarTraslado.setOnClickListener(view -> {
             onBackPressed();
         });
     }

@@ -12,14 +12,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        btnAccederMenuPrincipal = findViewById(R.id.btnIngresarMenuPrincipal);
+        btnAccederMenuPrincipal = findViewById(R.id.btnInicioSesion);
         btnAccederMenuPrincipal.setOnClickListener(View -> AcccederMenuPrincipal());
 
     }
 
     public void AcccederMenuPrincipal(){
         Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
         startActivity(intent);
     }
 }

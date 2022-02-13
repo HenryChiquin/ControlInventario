@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_register_products"
-    tools:context=".IngresoProducto">
+    tools:context=".TrasladoActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="sans-serif-black"
-        android:text="Registrar producto"
+        android:text="@string/TrasladoProducto"
         android:textColor="#F4F4F4"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgViewRegresarRegistro"
+        android:id="@+id/imgViewRegresarTraslado"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -31,14 +31,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
+
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="115dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView11">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,8 +66,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="@string/codigoProducto"
-                    android:text="@string/codigoProducto"
+                    android:hint="Seleccione producto..."
+                    android:text="Producto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -80,12 +89,11 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="@string/categoriaProducto"
-                    android:text="@string/categoriaProducto"
+                    android:hint="Selccione origen..."
+                    android:text="Origen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout0"
-                    tools:layout_editor_absoluteY="172dp">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout0">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/form_Categoria"
@@ -104,12 +112,11 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="@string/nombreProducto"
-                    android:text="@string/nombreProducto"
+                    android:hint="Seleccione destino..."
+                    android:text="Cantidad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout1"
-                    tools:layout_editor_absoluteY="172dp">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/form_nombre"
@@ -124,68 +131,18 @@
                     android:id="@+id/textInputLayout3"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="@string/descripcionProducto"
-                    android:text="@string/descripcionProducto"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-                    tools:layout_editor_absoluteY="172dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/form_descripcion"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:inputType="textImeMultiLine"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout4"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="@string/precioProducto"
-                    android:text="@string/precioProducto"
+                    android:hint="Cantidad"
+                    android:text="Cantidad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
-                    tools:layout_editor_absoluteY="172dp">
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/form_precio"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout5"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="@string/existenciaProducto"
-                    android:text="@string/existenciaProducto"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
-                    tools:layout_editor_absoluteY="172dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/form_existencia"
+                        android:id="@+id/form_costo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -213,7 +170,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Registrar"
+                android:text="Agregar"
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textStyle="bold" />

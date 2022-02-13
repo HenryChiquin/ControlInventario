@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/background_main_principal.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/background_register_products.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_catalogo.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_catalogo_producto.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_ingreso_producto.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_login.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_compra.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_consulta.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_ingreso_producto.xml" value="0.25" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_main.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_mantenimiento_producto.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_menu_principal.xml" value="0.25" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_menu_principal.xml" value="0.33" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_operaciones.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_salidad_productos.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_traslado.xml" value="0.25" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_venta.xml" value="0.26510416666666664" />
       </map>
     </option>
   </component>
