@@ -1,8 +1,6 @@
 
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-s
-Capp/src/main/java/com/grupopdc/controlinventario/LoginActivity.java,f\9\f9ed526c96721db51f28cfba8600f497e684d2c7
 {
 Kapp/src/main/java/com/grupopdc/controlinventario/MantenimientoProducto.java,a\f\af0f54c2b2cb3f769de900d14b2dcb3f1dc4ca54
 u

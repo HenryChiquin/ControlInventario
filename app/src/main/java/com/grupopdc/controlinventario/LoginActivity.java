@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnAccederMenuPrincipal;
@@ -20,5 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     public void AcccederMenuPrincipal(){
         Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+        Toast.makeText( getApplicationContext(),"Iniciando sesion", Toast.LENGTH_SHORT).show();
     }
 }
