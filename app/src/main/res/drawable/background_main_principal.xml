@@ -4,12 +4,12 @@
         <shape>
             <gradient
                 android:angle="0"
-                android:startColor="#2979FF"
+                android:startColor="#0094D8"
                 android:endColor="#0094D8"
                 android:type="linear"      />
         </shape>
     </item>
-    <item android:top="120dp"
+    <item android:top="230dp"
         android:bottom="-100dp"
         android:right="-400dp">
         <rotate

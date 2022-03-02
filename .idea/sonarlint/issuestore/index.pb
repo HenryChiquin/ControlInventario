@@ -1,0 +1,23 @@
+
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+s
+Capp/src/main/java/com/grupopdc/controlinventario/LoginActivity.java,f\9\f9ed526c96721db51f28cfba8600f497e684d2c7
+{
+Kapp/src/main/java/com/grupopdc/controlinventario/MantenimientoProducto.java,a\f\af0f54c2b2cb3f769de900d14b2dcb3f1dc4ca54
+u
+Eapp/src/main/java/com/grupopdc/controlinventario/IngresoProducto.java,c\f\cf4368906234980a4622c78712f26d8257ec4c5a
+v
+Fapp/src/main/java/com/grupopdc/controlinventario/CatalogoActivity.java,6\6\66795b5dba0702d82281f8c7648881a638dc0b94
+s
+Capp/src/main/java/com/grupopdc/controlinventario/VentaActivity.java,f\e\fe78e70a0090d296a8f4f8c1c77c668499533726
+s
+Capp/src/main/java/com/grupopdc/controlinventario/MenuPrincipal.java,3\0\30f3ec6c4f6e95d74a758316e7d1aefe067a1193
+v
+Fapp/src/main/java/com/grupopdc/controlinventario/TrasladoActivity.java,3\e\3e503e594a6f620ee5e9c5014019ad299970ab91
+v
+Fapp/src/main/java/com/grupopdc/controlinventario/ConsultaActivity.java,9\e\9e0eb4903e948bb2c0fc90f53abe8d795f109c07
+y
+Iapp/src/main/java/com/grupopdc/controlinventario/OperacionesActivity.java,f\5\f54d516ebb91d23d6f9f7d0409f39eb0d6e6ae1a
+t
+Dapp/src/main/java/com/grupopdc/controlinventario/CompraActivity.java,3\0\302d1bc5fb33b2cb308ebe534cc9c82ae6f94598
