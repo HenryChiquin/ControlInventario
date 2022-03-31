@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "985248124149",
+    "project_id": "umgproject-310c2",
+    "storage_bucket": "umgproject-310c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985248124149:android:3d6e33ef984d503fba49bc",
+        "android_client_info": {
+          "package_name": "com.grupopdc.controlinventario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985248124149-tqg2lv57j2ss6jnthannpq1io7k93183.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeJM01MjWN6podqiIUzt2z7U_DfZlioX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985248124149-tqg2lv57j2ss6jnthannpq1io7k93183.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
