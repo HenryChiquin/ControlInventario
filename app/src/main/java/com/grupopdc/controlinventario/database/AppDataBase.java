@@ -8,8 +8,10 @@ import androidx.room.RoomDatabase;
 
 import com.grupopdc.controlinventario.database.Dao.CategoriaDao;
 import com.grupopdc.controlinventario.database.Entity.CategoriaEntiry;
+import com.grupopdc.controlinventario.database.Entity.CompraEntiry;
+import com.grupopdc.controlinventario.database.Entity.DestinoEntiry;
 
-@Database(entities = {CategoriaEntiry.class},version = 3)
+@Database(entities = {CategoriaEntiry.class,DestinoEntiry.class, CompraEntiry.class},version = 5)
 public abstract  class AppDataBase extends RoomDatabase {
     public static AppDataBase INSTANCEDABASE;
 

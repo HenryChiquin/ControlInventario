@@ -64,21 +64,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="56dp"
                     android:layout_marginEnd="16dp"
                     android:hint="Seleccione producto..."
                     android:text="Producto"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCodigoProducto"
+                    <Spinner
+                        android:id="@+id/SpinnerProducto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
-
+                        android:layout_weight="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -87,21 +86,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginEnd="16dp"
                     android:hint="Selccione destino..."
                     android:text="Destino"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout0">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCategoriaProducto"
+                    <Spinner
+                        android:id="@+id/SpinnerDestino"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
-
+                        android:layout_weight="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -119,7 +117,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtNombreProducto"
+                        android:id="@+id/txtCantidadProducto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -142,7 +140,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtNombre">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/form_costo"
+                        android:id="@+id/txtCostoProducto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -158,6 +156,26 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginEnd="267dp"
+                    android:text="Seleccione producto"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="66dp"
+                    android:text="Seleccione destino"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayout0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

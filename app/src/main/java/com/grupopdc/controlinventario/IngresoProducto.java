@@ -5,11 +5,8 @@ import static com.grupopdc.controlinventario.Tools.KeysRoutes.PATH_REGISTRO;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -39,7 +36,6 @@ import com.grupopdc.controlinventario.database.Entity.Producto;
 
 import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import com.google.firebase.database.DatabaseReference;
@@ -80,7 +76,7 @@ public class IngresoProducto extends CoreActivity {
         progress = new ProgressDialog(this);
 
         imgViewRegresarRegistro = findViewById(R.id.imgViewRegresarRegistro);
-        NombreP = findViewById(R.id.txtNombreProducto);
+        NombreP = findViewById(R.id.txtCantidadProducto);
         CostoP =  findViewById(R.id.txtPrecioProducto);
         CategoriaP =  findViewById(R.id.txtCategoriaProducto);
         CantidadP =  findViewById(R.id.txtExistenciaProducto);
@@ -98,12 +94,17 @@ public class IngresoProducto extends CoreActivity {
 
         mUploadImageView.setOnClickListener(v -> fileUpload());
 
-        bntRegistro.setOnClickListener(View-> registrodeDatos());
-        CategoriaEntiry categoriaEntiry = new CategoriaEntiry();
-        categoriaEntiry.setIdCategoria(2);
-        categoriaEntiry.setNombre("PRUEBA 2");
-        repositoryCategoria.insert(categoriaEntiry);
+        bntRegistro.setOnClickListener(View-> crearcategoria());
 
+
+    }
+
+    public void crearcategoria(){
+        CategoriaEntiry categoriaEntiry = new CategoriaEntiry();
+        categoriaEntiry.setIdCategoria(Integer.parseInt(NombreP.getText().toString()));
+        categoriaEntiry.setNombre(CostoP.getText().toString());
+        repositoryCategoria.insert(categoriaEntiry);
+        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
     }
     public void obtenerdatos(){
 
