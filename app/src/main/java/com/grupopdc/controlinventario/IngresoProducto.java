@@ -101,8 +101,10 @@ public class IngresoProducto extends CoreActivity {
 
     public void crearcategoria(){
         CategoriaEntiry categoriaEntiry = new CategoriaEntiry();
-        categoriaEntiry.setIdCategoria(Integer.parseInt(NombreP.getText().toString()));
-        categoriaEntiry.setNombre(CostoP.getText().toString());
+        categoriaEntiry.setCate(CategoriaP.getText().toString());
+        categoriaEntiry.setNombre(NombreP.getText().toString());
+        categoriaEntiry.setCosto(Double.parseDouble(CostoP.getText().toString()));
+        categoriaEntiry.setExistencia(Integer.parseInt(CantidadP.getText().toString()));
         repositoryCategoria.insert(categoriaEntiry);
         Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
     }

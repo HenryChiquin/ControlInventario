@@ -11,7 +11,7 @@ import com.grupopdc.controlinventario.database.Entity.CategoriaEntiry;
 import com.grupopdc.controlinventario.database.Entity.CompraEntiry;
 import com.grupopdc.controlinventario.database.Entity.DestinoEntiry;
 
-@Database(entities = {CategoriaEntiry.class,DestinoEntiry.class, CompraEntiry.class},version = 5)
+@Database(entities = {CategoriaEntiry.class,DestinoEntiry.class, CompraEntiry.class},version = 8)
 public abstract  class AppDataBase extends RoomDatabase {
     public static AppDataBase INSTANCEDABASE;
 
