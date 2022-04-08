@@ -3,28 +3,28 @@ package com.grupopdc.controlinventario.database.Entity;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Categoria")
-public class CategoriaEntiry {
-    @PrimaryKey private int IdCategoria;
-    private String Nombre;
+@Entity(tableName = "CATEGORIA")
+public class CategoriaEntity {
+    @PrimaryKey private int idCategoria;
+    private String nombre;
 
-    public CategoriaEntiry() {
-        Nombre = "N/A";
+    public CategoriaEntity() {
+        nombre = "N/A";
     }
 
     public int getIdCategoria() {
-        return IdCategoria;
+        return idCategoria;
     }
 
     public void setIdCategoria(int idCategoria) {
-        IdCategoria = idCategoria;
+        this.idCategoria = idCategoria;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 }

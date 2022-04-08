@@ -1,6 +1,8 @@
 package com.grupopdc.controlinventario.Tools;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -14,10 +16,13 @@ import org.json.JSONObject;
 
 import java.util.concurrent.CountDownLatch;
 
-public class Networking {
+public class Networking extends LogMessage{
     private static String TAG_CLASS = "NETWORK CLASS";
     private Context ctx;
-
+    private final int TIMEOUT_DEF_CONNNECTION  = 1000;
+    private final int TIMEOUT_DEF_RESPONSE_DATA = 1000;
+    private int TIMEOUT_CONNECTION = TIMEOUT_DEF_CONNNECTION;//MILLISEC.
+    private int TIMEOUT_RESPONSE_DATA = TIMEOUT_DEF_RESPONSE_DATA;//MILLISEC.
 
     public Networking(Context ctx) {
 
@@ -25,7 +30,10 @@ public class Networking {
         LogMessage.this_ctx = ctx;
     }
 
-
+    public void ChangeTimeouts(float reason_conn, float reason_resp){
+        TIMEOUT_CONNECTION = (int)(TIMEOUT_DEF_CONNNECTION * reason_conn);//MILLISEC.
+        TIMEOUT_RESPONSE_DATA = (int)(TIMEOUT_DEF_RESPONSE_DATA * reason_resp);//MILLISEC.
+    }
 
     public String post_http_request(final String  s_url, final JSONObject jsonBody){
         final CountDownLatch latch = new CountDownLatch(1);
@@ -57,5 +65,19 @@ public class Networking {
         }
         return responsyBody[0];
 
+    }
+
+
+    ///////[ASYNC AUX METHODS]//////////////////////////////////////////////////////////////////////
+    public boolean isNetworkAvailable(Context ctx) {
+        ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting() && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+            Log_i("isNetworkAvailable - Conexion de red disponible.", TAG_CLASS);
+            return true;
+        }else {
+            Log_e("isNetworkAvailable - ERROR : Conexion de red no disponible.", TAG_CLASS);
+            return false;
+        }
     }
 }

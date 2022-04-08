@@ -1,10 +1,12 @@
-package com.grupopdc.controlinventario;
+package com.grupopdc.controlinventario.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.grupopdc.controlinventario.R;
 
 public class MenuPrincipal extends AppCompatActivity {
     private CardView cardViewRegistro,cardViewMantenimiento,cardViewConsulta, cardViewOperacion,cardViewCatalogo;

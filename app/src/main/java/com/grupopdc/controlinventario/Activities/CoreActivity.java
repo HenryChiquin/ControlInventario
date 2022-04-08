@@ -1,4 +1,4 @@
-package com.grupopdc.controlinventario;
+package com.grupopdc.controlinventario.Activities;
 
 import android.os.Bundle;
 
@@ -6,8 +6,16 @@ import com.google.android.material.snackbar.Snackbar;
 import com.grupopdc.controlinventario.Tools.QuickCache;
 import com.grupopdc.controlinventario.Tools.Tools;
 import com.grupopdc.controlinventario.database.AppDataBase;
+import com.grupopdc.controlinventario.database.Repository.Implementacion.ImplementacionAlmacen;
 import com.grupopdc.controlinventario.database.Repository.Implementacion.ImplementacionCategoria;
+import com.grupopdc.controlinventario.database.Repository.Implementacion.ImplementacionImpuesto;
+import com.grupopdc.controlinventario.database.Repository.Implementacion.ImplementacionProducto;
+import com.grupopdc.controlinventario.database.Repository.Implementacion.ImplementacionProveedor;
+import com.grupopdc.controlinventario.database.Repository.RepositoryAlmacen;
 import com.grupopdc.controlinventario.database.Repository.RepositoryCategoria;
+import com.grupopdc.controlinventario.database.Repository.RepositoryImpuesto;
+import com.grupopdc.controlinventario.database.Repository.RepositoryProducto;
+import com.grupopdc.controlinventario.database.Repository.RepositoryProveedor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +34,13 @@ public class CoreActivity extends AppCompatActivity {
     public static QuickCache qkcache;
     //DB ROOM
     public static AppDataBase appDataBase;
+
+    public static RepositoryProducto repositoryProducto;
     public static RepositoryCategoria repositoryCategoria;
+    public static RepositoryAlmacen repositoryAlmacen;
+    public static RepositoryProveedor repositoryProveedor;
+    public static RepositoryImpuesto repositoryImpuesto;
+
     /////---[OVERRIDES]-----------------------------------------------------------------------------
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +70,11 @@ public class CoreActivity extends AppCompatActivity {
     //INIT
     private void InitPropiedadesDataBase(){
         appDataBase = AppDataBase.getInstance(this);
+
         repositoryCategoria = new ImplementacionCategoria(appDataBase.categoriaDao());
+        repositoryProducto = new ImplementacionProducto(appDataBase.productoDao());
+        repositoryAlmacen = new ImplementacionAlmacen(appDataBase.almacenDao());
+        repositoryProveedor = new ImplementacionProveedor(appDataBase.proveedorDao());
+        repositoryImpuesto = new ImplementacionImpuesto(appDataBase.impuestoDao());
     }
 }
