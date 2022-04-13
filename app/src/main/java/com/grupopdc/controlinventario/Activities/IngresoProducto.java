@@ -1,4 +1,4 @@
-package com.grupopdc.controlinventario;
+package com.grupopdc.controlinventario.Activities;
 
 import static com.grupopdc.controlinventario.Tools.KeysRoutes.PATH_REGISTRO;
 
@@ -8,8 +8,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,12 +35,15 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
-import com.grupopdc.controlinventario.database.Entity.CategoriaEntiry;
-import com.grupopdc.controlinventario.database.Entity.Producto;
+import com.grupopdc.controlinventario.R;
+import com.grupopdc.controlinventario.database.Entity.CategoriaEntity;
+import com.grupopdc.controlinventario.database.Entity.ProductoEntity;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import com.google.firebase.database.DatabaseReference;
 
@@ -50,6 +57,9 @@ public class IngresoProducto extends CoreActivity {
     private TextInputEditText NombreP, CostoP,CategoriaP, CantidadP;
     private TextInputLayout NombreProd;
     private Button bntRegistro;
+    private Spinner spCategoria;
+
+    private List<CategoriaEntity> Listacategoria;
 
 
     private static final int File = 1;
@@ -60,7 +70,7 @@ public class IngresoProducto extends CoreActivity {
     private static final String CARPETA_PRINCIPAL="";
     private static final String CARPETA_IMAGEN="";
     private static final String DIRECTORIO_IMAGEN="";
-
+    List<CategoriaEntity> listas;
     ProgressDialog progress;
 
     @SuppressLint("NonConstantResourceId")
@@ -69,6 +79,7 @@ public class IngresoProducto extends CoreActivity {
     @BindView(R.id.subirImagenFira)
     ImageView mUploadImageView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,11 +87,16 @@ public class IngresoProducto extends CoreActivity {
         progress = new ProgressDialog(this);
 
         imgViewRegresarRegistro = findViewById(R.id.imgViewRegresarRegistro);
-        NombreP = findViewById(R.id.txtCantidadProducto);
+        NombreP = findViewById(R.id.txtNombreProducto);
         CostoP =  findViewById(R.id.txtPrecioProducto);
         CategoriaP =  findViewById(R.id.txtCategoriaProducto);
         CantidadP =  findViewById(R.id.txtExistenciaProducto);
         bntRegistro =  findViewById(R.id.btnRegistroProducto);
+
+        spCategoria=(Spinner) findViewById(R.id.spCategoria);
+        Listacategoria = new ArrayList<>();
+
+        listCategoriaSp();
 
 
         imgViewRegresarRegistro.setOnClickListener(view -> {
@@ -89,37 +105,42 @@ public class IngresoProducto extends CoreActivity {
         });
 
         ButterKnife.bind(this);
-
+        listas = new ArrayList<>();
         myRef = FirebaseDatabase.getInstance().getReference();
-
         mUploadImageView.setOnClickListener(v -> fileUpload());
-
-        bntRegistro.setOnClickListener(View-> crearcategoria());
-
+        bntRegistro.setOnClickListener(View-> listaDatos());
 
     }
+    public void listCategoriaSp(){
 
-    public void crearcategoria(){
-        CategoriaEntiry categoriaEntiry = new CategoriaEntiry();
-        categoriaEntiry.setCate(CategoriaP.getText().toString());
-        categoriaEntiry.setNombre(NombreP.getText().toString());
-        categoriaEntiry.setCosto(Double.parseDouble(CostoP.getText().toString()));
-        categoriaEntiry.setExistencia(Integer.parseInt(CantidadP.getText().toString()));
-        repositoryCategoria.insert(categoriaEntiry);
-        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
-    }
-    public void obtenerdatos(){
+        Listacategoria = repositoryCategoria.getAllCategoriaLista();
 
-        myRef.child("user1").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String link = snapshot.child("link").getValue().toString();
-                NombreP.setText(link);
-                Log.i("LINK image storage: "+link,"PRODUCTO ACTIVITY");
+        List<String> lcategoria = new ArrayList<>();
+        for(int index = 0; index < Listacategoria.size(); index++)
+        {
+            CategoriaEntity this_categoria = Listacategoria.get(index);
+            //lcategoria.add(this_categoria.getIdCategoria(),this_categoria.getNombre());
+            lcategoria.add(this_categoria.getIdCategoria() +" "+ this_categoria.getNombre());
+            //lcategoria.add(this_categoria.getNombre());
+
+        }
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lcategoria);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spCategoria.setAdapter(myAdapter);
+
+
+        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
+        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
+
+        spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
+                String workRequestType = arg0.getItemAtPosition(pos).toString();
+                CantidadP.setText(workRequestType);
+                //String Id = lcategoria.get(pos)
             }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            @Override public void onNothingSelected(AdapterView<?> arg0){
 
             }
         });
@@ -130,15 +151,28 @@ public class IngresoProducto extends CoreActivity {
         intent.setType("*/*");
         startActivityForResult(intent,File);
     }
+    public void listaDatos(){
 
+        listas = repositoryCategoria.getAllCategoriaLista();
+
+
+
+        for(int index = 0; index < listas.size(); index++) {
+            CategoriaEntity this_categoria = listas.get(index);
+            this_categoria.getIdCategoria();
+            tools.Log_i("Categoria lista for:"+this_categoria.getNombre()+" :" + this_categoria.getIdCategoria(),"PRODUCTO ACTIVITY");
+
+        }
+
+        Toast.makeText(getApplicationContext(), "PPP"+listas, Toast.LENGTH_SHORT).show();
+    }
     public void registrodeDatos(){
+
 
         String nombre = NombreP.getText().toString();
         String costo = CostoP.getText().toString();
         String idCategoria = CategoriaP.getText().toString();
         String cantidad = CantidadP.getText().toString();
-        String fechaVencimiento = "2022-03-02";
-        String image = "https://walmartgt.vtexassets.com/arquivos/ids/176274/Jugo-Rabinal-Mango-Pi-a-1800ml-1-15127.jpg";
 
         progress.setTitle("Procesando");
         progress.setMessage("Por favor espere ...");
@@ -149,17 +183,16 @@ public class IngresoProducto extends CoreActivity {
             public void run(){
                 //tarea a realizar
                 try {
-                    Producto producto = new Producto();
+                    ProductoEntity productoEntity = new ProductoEntity();
 
-                    producto.setNombre(nombre);
-                    producto.setCosto(Float.parseFloat(costo));
-                    producto.setCategoria(Integer.parseInt(idCategoria));
-                    producto.setCantidad(Integer.parseInt(cantidad));
-                    producto.setFechaVencimiento(fechaVencimiento);
-                    producto.setImagen(image);
+                    productoEntity.setNombre(nombre);
+                    productoEntity.setCosto(Float.parseFloat(costo));
+                    productoEntity.setCantidad(Integer.parseInt(cantidad));
+                    productoEntity.setIdCategoria(Integer.parseInt(idCategoria));
+
 
                     Gson gson = new Gson();
-                    String json = gson.toJson(producto);
+                    String json = gson.toJson(productoEntity);
 
                     JSONObject jsonObject = new JSONObject(json);
 
@@ -230,8 +263,9 @@ public class IngresoProducto extends CoreActivity {
                     HashMap<String,String> hashMap = new HashMap<>();
                     hashMap.put("link", String.valueOf(uri));
                     myRef.setValue(hashMap);
-
+                    tools.MakeToast("Imagen guardado correctamente");
                     Log.d("Mensaje", "Se subió correctamente");
+
 
                 }));
 

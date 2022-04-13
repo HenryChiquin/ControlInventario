@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_register_products"
-    tools:context=".MantenimientoProducto">
+    tools:context=".Activities.MantenimientoProducto">
 
     <ImageView
         android:id="@+id/imgViewRegresarMantenimiento"
@@ -50,7 +50,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
-            android:text="Actualizar datos del producto"
+            android:text="Actualizar datos del productoEntity"
             android:textAllCaps="false"
             android:textSize="16sp"
             android:textStyle="bold" />

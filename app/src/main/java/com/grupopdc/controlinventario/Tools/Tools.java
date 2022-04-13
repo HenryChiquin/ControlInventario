@@ -1,8 +1,8 @@
 package com.grupopdc.controlinventario.Tools;
 
-import com.grupopdc.controlinventario.CoreActivity;
+import com.grupopdc.controlinventario.Activities.CoreActivity;
 
-public class Tools extends LogMessage{
+public class Tools extends LogMessage {
     private Networking networking;
     public Tools(CoreActivity ctx) {
         networking = new Networking(ctx);
@@ -11,4 +11,5 @@ public class Tools extends LogMessage{
     public Networking usedNetworking(){
         return networking;
     }
+
 }

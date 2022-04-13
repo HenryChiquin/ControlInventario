@@ -1,4 +1,4 @@
-package com.grupopdc.controlinventario;
+package com.grupopdc.controlinventario.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.grupopdc.controlinventario.R;
 
 public class OperacionesActivity extends AppCompatActivity {
     Button btnCompra, btnVenta,btnTraslado;

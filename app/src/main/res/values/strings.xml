@@ -9,8 +9,8 @@
     <string name="precioProducto">Precio</string>
     <string name="existenciaProducto">Existencia</string>
     <!--    MENU PRINCIPAL    -->
-    <string name="registroProducto">Registrar un nuevo producto</string>
-    <string name="Mantenimiento">Mantenimiento de producto</string>
+    <string name="registroProducto">Registrar un nuevo productoEntity</string>
+    <string name="Mantenimiento">Mantenimiento de productoEntity</string>
     <string name="Operaciones">Gestion de operaciones</string>
     <string name="CatalogoProducto">Catalogo de productos</string>
     <string name="ConsultasGeneral">Consultas</string>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_register_products"
-    tools:context=".TrasladoActivity">
+    tools:context=".Activities.TrasladoActivity">
 
     <TextView
         android:id="@+id/textView8"
@@ -66,7 +66,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
-                    android:hint="Seleccione producto..."
+                    android:hint="Seleccione productoEntity..."
                     android:text="Producto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
