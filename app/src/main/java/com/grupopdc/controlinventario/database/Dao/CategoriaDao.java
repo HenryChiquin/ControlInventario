@@ -4,13 +4,19 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
-import com.grupopdc.controlinventario.database.Entity.CategoriaEntiry;
+import com.grupopdc.controlinventario.database.Entity.CategoriaEntity;
+
+import java.util.List;
+
 
 @Dao
 public interface CategoriaDao {
     @Insert
-    void insert(CategoriaEntiry modelCategoriaEntiry);
-    @Query("SELECT * FROM categoria")
-    CategoriaEntiry getAllCategoria();
+    void insert(CategoriaEntity modelCategoriaEntiry);
+    @Query("SELECT * FROM CATEGORIA")
+    CategoriaEntity getAllCategoria();
+
+    @Query("SELECT * FROM CATEGORIA")
+    List<CategoriaEntity> getAllCategoriaLista();
 
 }

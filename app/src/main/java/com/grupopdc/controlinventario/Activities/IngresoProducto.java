@@ -36,6 +36,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 import com.grupopdc.controlinventario.R;
+import com.grupopdc.controlinventario.database.Entity.AlmacenEntity;
 import com.grupopdc.controlinventario.database.Entity.CategoriaEntity;
 import com.grupopdc.controlinventario.database.Entity.ProductoEntity;
 
@@ -57,9 +58,10 @@ public class IngresoProducto extends CoreActivity {
     private TextInputEditText NombreP, CostoP,CategoriaP, CantidadP;
     private TextInputLayout NombreProd;
     private Button bntRegistro;
-    private Spinner spCategoria;
+    private Spinner spCategoria,spAlmacen;
 
     private List<CategoriaEntity> Listacategoria;
+    private List<AlmacenEntity> Listaalmacen;
 
 
     private static final int File = 1;
@@ -87,7 +89,6 @@ public class IngresoProducto extends CoreActivity {
         progress = new ProgressDialog(this);
 
         imgViewRegresarRegistro = findViewById(R.id.imgViewRegresarRegistro);
-        NombreP = findViewById(R.id.txtNombreProducto);
         CostoP =  findViewById(R.id.txtPrecioProducto);
         CategoriaP =  findViewById(R.id.txtCategoriaProducto);
         CantidadP =  findViewById(R.id.txtExistenciaProducto);
@@ -95,8 +96,11 @@ public class IngresoProducto extends CoreActivity {
 
         spCategoria=(Spinner) findViewById(R.id.spCategoria);
         Listacategoria = new ArrayList<>();
+        Listaalmacen = new ArrayList<>();
 
+        ListadeCategoria();
         listCategoriaSp();
+        listAlmacenSp();
 
 
         imgViewRegresarRegistro.setOnClickListener(view -> {
@@ -106,11 +110,48 @@ public class IngresoProducto extends CoreActivity {
 
         ButterKnife.bind(this);
         listas = new ArrayList<>();
+        spCategoria=(Spinner) findViewById(R.id.spCategoria);
+
+
         myRef = FirebaseDatabase.getInstance().getReference();
         mUploadImageView.setOnClickListener(v -> fileUpload());
-        bntRegistro.setOnClickListener(View-> listaDatos());
+        //bntRegistro.setOnClickListener(View-> crearCategoria());
+        //bntRegistro.setOnClickListener(View-> crearAlmacen());
 
     }
+
+    public void ListadeCategoria(){
+        Listacategoria = repositoryCategoria.getAllCategoriaLista();
+        List<String> lcategoria = new ArrayList<>();
+        for(int index = 0; index < Listacategoria.size(); index++)
+        {
+            CategoriaEntity this_categoria = Listacategoria.get(index);
+            lcategoria.add(this_categoria.getNombre()+" "+this_categoria.getIdCategoria());
+            tools.Log_i("Categoria lista for:" + this_categoria.getNombre() + " :" + this_categoria.getIdCategoria(), "PRODUCTO ACTIVITY");
+        }
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IngresoProducto.this,
+                android.R.layout.simple_list_item_1,lcategoria);
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spCategoria.setAdapter(myAdapter);
+    }
+
+    public void crearCategoria(){
+        CategoriaEntity categoriaEntity = new CategoriaEntity();
+        categoriaEntity.setIdCategoria(2);
+        categoriaEntity.setNombre("Gaming");
+        repositoryCategoria.insert(categoriaEntity);
+        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
+    }
+
+    public void crearAlmacen(){
+        AlmacenEntity almacenEntity = new AlmacenEntity();
+        almacenEntity.setIdAlmacen(3);
+        almacenEntity.setNombre("C");
+        almacenEntity.setUbicacion("Ciudad de Guatemala");
+        repositoryAlmacen.insert(almacenEntity);
+        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
+    }
+
     public void listCategoriaSp(){
 
         Listacategoria = repositoryCategoria.getAllCategoriaLista();
@@ -135,6 +176,41 @@ public class IngresoProducto extends CoreActivity {
         //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
 
         spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
+                String workRequestType = arg0.getItemAtPosition(pos).toString();
+                CantidadP.setText(workRequestType);
+                //String Id = lcategoria.get(pos)
+            }
+            @Override public void onNothingSelected(AdapterView<?> arg0){
+
+            }
+        });
+    }
+
+    public void listAlmacenSp(){
+
+        Listaalmacen = repositoryAlmacen.getAllAlmacen();
+
+        List<String> lalmacen = new ArrayList<>();
+        for(int index = 0; index < Listaalmacen.size(); index++)
+        {
+            AlmacenEntity this_almacen = Listaalmacen.get(index);
+            //lcategoria.add(this_categoria.getIdCategoria(),this_categoria.getNombre());
+            lalmacen.add(this_almacen.getIdAlmacen() +" "+ this_almacen.getNombre() +" "+ this_almacen.getUbicacion());
+            //lcategoria.add(this_categoria.getNombre());
+
+        }
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spAlmacen.setAdapter(myAdapter);
+
+
+        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
+        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
+
+        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
                 String workRequestType = arg0.getItemAtPosition(pos).toString();
                 CantidadP.setText(workRequestType);

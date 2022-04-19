@@ -27,4 +27,5 @@ public class ImplementacionCategoria implements RepositoryCategoria {
     public List<CategoriaEntity> getAllCategoriaLista() {
         return categoriaDao.getAllCategoriaLista();
     }
+
 }

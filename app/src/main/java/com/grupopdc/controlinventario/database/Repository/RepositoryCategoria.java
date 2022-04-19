@@ -8,4 +8,6 @@ public interface RepositoryCategoria {
     void insert(CategoriaEntity modelCategoriaEntity);
     CategoriaEntity getAllCategoria();
     List<CategoriaEntity> getAllCategoriaLista();
+
+
 }

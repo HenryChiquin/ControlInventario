@@ -19,8 +19,14 @@
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_salidad_productos.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_traslado.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_venta.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/content_core.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_catalogo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_compra.xml" value="0.22" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_ingreso_producto.xml" value="0.25" />
         <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_mantenimiento_producto.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_menu_principal.xml" value="0.22" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_operaciones.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_traslado.xml" value="0.18" />
       </map>
     </option>
   </component>
