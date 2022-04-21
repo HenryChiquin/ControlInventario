@@ -115,7 +115,7 @@ public class IngresoProducto extends CoreActivity {
 
         myRef = FirebaseDatabase.getInstance().getReference();
         mUploadImageView.setOnClickListener(v -> fileUpload());
-        //bntRegistro.setOnClickListener(View-> crearCategoria());
+        //bntRegistro.setOnClickListener(View-> );
         //bntRegistro.setOnClickListener(View-> crearAlmacen());
 
     }
@@ -150,6 +150,7 @@ public class IngresoProducto extends CoreActivity {
         almacenEntity.setUbicacion("Ciudad de Guatemala");
         repositoryAlmacen.insert(almacenEntity);
         Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
+        crearCategoria();
     }
 
     public void listCategoriaSp(){
@@ -200,26 +201,27 @@ public class IngresoProducto extends CoreActivity {
             //lcategoria.add(this_categoria.getNombre());
 
         }
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
-
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spAlmacen.setAdapter(myAdapter);
-
-
-        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
-        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
-
-        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
-                String workRequestType = arg0.getItemAtPosition(pos).toString();
-                CantidadP.setText(workRequestType);
-                //String Id = lcategoria.get(pos)
-            }
-            @Override public void onNothingSelected(AdapterView<?> arg0){
-
-            }
-        });
+        tools.Log_i("almacen list: "+ lalmacen, "PRODUCTO ACTIVITY");
+//        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
+//
+//        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//
+//        spAlmacen.setAdapter(myAdapter);
+//
+//
+//        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
+//        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
+//
+//        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+//            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
+//                String workRequestType = arg0.getItemAtPosition(pos).toString();
+//                CantidadP.setText(workRequestType);
+//                //String Id = lcategoria.get(pos)
+//            }
+//            @Override public void onNothingSelected(AdapterView<?> arg0){
+//
+//            }
+//        });
     }
 
     public void fileUpload() {
