@@ -98,7 +98,7 @@ public class IngresoProducto extends CoreActivity {
         Listacategoria = new ArrayList<>();
         Listaalmacen = new ArrayList<>();
 
-        ListadeCategoria();
+        //ListadeCategoria();
         listCategoriaSp();
         //listAlmacenSp();
 

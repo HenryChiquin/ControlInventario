@@ -58,28 +58,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout0"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteProducto"
+                    android:layout_width="350dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="16dp"
-                    android:hint="Seleccione productoEntity..."
-                    android:text="Producto"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="32dp"
+                    android:hint="seleccione un producto.."
+                    android:minHeight="48dp"
+                    android:singleLine="true"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    tools:ignore="MissingConstraints" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCodigoProducto"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/imgBtnClean"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/autoCompleteProducto"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_clear_all_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayout1"
@@ -93,7 +94,7 @@
                     android:text="Origen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout0">
+                    app:layout_constraintTop_toBottomOf="@+id/autoCompleteProducto">
 
                     <Spinner
                         android:id="@+id/spOrigen"

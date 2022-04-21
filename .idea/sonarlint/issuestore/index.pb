@@ -5,8 +5,6 @@ H
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 v
 Fapp/src/main/java/com/grupopdc/controlinventario/Tools/LogMessage.java,f\f\ffd49577c676495a34684b5a1e9e2bed179191bc
-Ñ
-Tapp/src/main/java/com/grupopdc/controlinventario/database/Entity/ProductoEntity.java,5\a\5a7b636e3559cd0e2810fabdcbc470745148c1cf
 u
 Eapp/src/main/java/com/grupopdc/controlinventario/Api/MassDataAPI.java,3\1\3132dd6fb41e6d1bb18e600018176c64ecf4e0a5
 |
@@ -49,8 +47,6 @@ v
 Fapp/src/main/java/com/grupopdc/controlinventario/Tools/QuickCache.java,9\a\9a9c9ae7cf590d689acb78bfb94bf34ea515bbaf
 v
 Fapp/src/main/java/com/grupopdc/controlinventario/Tools/Networking.java,f\8\f8a0fa6d907761f171671c06ece4e69a35b98f4a
-v
-Fapp/src/main/java/com/grupopdc/controlinventario/Tools/KeysRoutes.java,b\2\b2432ca63abdf222507297d98de7adb4ff538ca9
 Ü
 Vapp/src/main/java/com/grupopdc/controlinventario/Activities/MantenimientoProducto.java,3\2\3201e925cb64b80d2b3a98121406e20d721d617a
 ~
@@ -67,8 +63,6 @@ Oapp/src/main/java/com/grupopdc/controlinventario/Activities/CompraActivity.java
 \app/src/main/java/com/grupopdc/controlinventario/database/Repository/RepositoryProducto.java,f\2\f22043d0a2ede0aca0112826cee63f6cb6cd6d99
 Å
 Qapp/src/main/java/com/grupopdc/controlinventario/Activities/CatalogoActivity.java,0\3\038826e8678f4e603d83fa655e8883d6d720bce6
-~
-Napp/src/main/java/com/grupopdc/controlinventario/Activities/LoginActivity.java,8\c\8cf6cdace0d3e973651a46a4e7facda19b0829e0
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 ç

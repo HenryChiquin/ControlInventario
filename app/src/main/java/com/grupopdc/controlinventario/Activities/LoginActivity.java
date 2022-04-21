@@ -47,9 +47,9 @@ public class LoginActivity extends CoreActivity {
 
     public void AcccederMenuPrincipal(){
 
-        Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        //downloadGetAllMassData();
+        //Intent intent = new Intent(getApplicationContext(), MenuPrincipal.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //startActivity(intent);
+        downloadGetAllMassData();
     }
     /* ASYNC TASK - DESCARGA DE TODA LA INFORMACION CON RETROFIT*/
     public void downloadGetAllMassData(){

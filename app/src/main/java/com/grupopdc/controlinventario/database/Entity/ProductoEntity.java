@@ -14,6 +14,15 @@ public class ProductoEntity {
     private String fechaRegistro;
     private int idEstado;
 
+    public ProductoEntity() {
+    }
+
+    public ProductoEntity(String nombre, float costo, int idCategoria, int cantidad) {
+        this.nombre = nombre;
+        this.costo = costo;
+        this.idCategoria = idCategoria;
+        this.cantidad = cantidad;
+    }
 
     public int getIdProducto() {
         return idProducto;
