@@ -100,7 +100,7 @@ public class IngresoProducto extends CoreActivity {
 
         ListadeCategoria();
         listCategoriaSp();
-        listAlmacenSp();
+        //listAlmacenSp();
 
 
         imgViewRegresarRegistro.setOnClickListener(view -> {
@@ -153,6 +153,8 @@ public class IngresoProducto extends CoreActivity {
         crearCategoria();
     }
 
+
+    //LISTA CATEGORIA SPINNER
     public void listCategoriaSp(){
 
         Listacategoria = repositoryCategoria.getAllCategoriaLista();
@@ -202,26 +204,26 @@ public class IngresoProducto extends CoreActivity {
 
         }
         tools.Log_i("almacen list: "+ lalmacen, "PRODUCTO ACTIVITY");
-//        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
-//
-//        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//
-//        spAlmacen.setAdapter(myAdapter);
-//
-//
-//        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
-//        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
-//
-//        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-//            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
-//                String workRequestType = arg0.getItemAtPosition(pos).toString();
-//                CantidadP.setText(workRequestType);
-//                //String Id = lcategoria.get(pos)
-//            }
-//            @Override public void onNothingSelected(AdapterView<?> arg0){
-//
-//            }
-//        });
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
+
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spAlmacen.setAdapter(myAdapter);
+
+
+        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
+        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
+
+        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
+                String workRequestType = arg0.getItemAtPosition(pos).toString();
+                NombreP.setText(workRequestType);
+                //String Id = lcategoria.get(pos)
+            }
+            @Override public void onNothingSelected(AdapterView<?> arg0){
+
+            }
+        });
     }
 
     public void fileUpload() {

@@ -95,12 +95,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout0">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCategoriaProducto"
+                    <Spinner
+                        android:id="@+id/spOrigen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
+                        android:layout_weight="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,12 +117,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCantidadProducto"
+                    <Spinner
+                        android:id="@+id/spDestino"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
-                        android:textSize="18sp" />
+                        android:layout_weight="1" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
