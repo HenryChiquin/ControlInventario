@@ -17,4 +17,18 @@ public interface ProductoDao {
     @Query("SELECT * FROM PRODUCTO")
     List<ProductoEntity> getallProducto();
 
+    @Query("SELECT nombre FROM PRODUCTO")
+    List<String> getAllMarcasTag();
+
+    @Query("SELECT * FROM PRODUCTO")
+    List<ProductoEntity> getAllCodigoSKUNames();
+
+
+    @Query("SELECT idProducto FROM PRODUCTO WHERE nombre IN (:nombreProducto)")
+    List<Integer> getCodigoProductoByProducto(String nombreProducto);
+
+
+    @Query("SELECT DISTINCT nombre FROM PRODUCTO WHERE nombre = :marcaProducto")
+    List<String> getCodigoMarcaByMarca(String marcaProducto);
+
 }

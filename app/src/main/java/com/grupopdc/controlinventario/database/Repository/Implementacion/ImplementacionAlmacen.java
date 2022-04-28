@@ -22,4 +22,9 @@ public class ImplementacionAlmacen implements RepositoryAlmacen {
     public List<AlmacenEntity> getAllAlmacen() {
         return almacenDao.getAllAlmacen();
     }
+
+    @Override
+    public List<AlmacenEntity> getAllAlmacenDestino() {
+        return almacenDao.getAllAlmacenDestino();
+    }
 }

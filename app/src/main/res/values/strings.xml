@@ -9,11 +9,19 @@
     <string name="precioProducto">Precio</string>
     <string name="existenciaProducto">Existencia</string>
     <!--    MENU PRINCIPAL    -->
-    <string name="registroProducto">Registrar un nuevo productoEntity</string>
-    <string name="Mantenimiento">Mantenimiento de productoEntity</string>
+    <string name="registroProducto">Registrar un nuevo producto</string>
+    <string name="Mantenimiento">Mantenimiento de producto</string>
     <string name="Operaciones">Gestion de operaciones</string>
     <string name="CatalogoProducto">Catalogo de productos</string>
     <string name="ConsultasGeneral">Consultas</string>
+    <string name="psvtxt_last_sync">Ultima sincronización: </string>
+    <string name="psvtxt_pending_sync">Pendiente de sincronización</string>
+    <string name="dialog_sync">¿Desea sincronizar?</string>
+    <string name="psvtxt_yes">Si</string>
+    <string name="psvtxt_no">No</string>
+    <string name="pref_SYNC_DB_DATE">SYNC_DB_DATE</string>
+
+
     <!--    LOGIN   -->
     <string name="InicioSesion">Iniciar Sesión</string>
     <string name="UsuarioSesion">Usuario</string>

@@ -17,4 +17,7 @@ public interface AlmacenDao {
 
     @Query("SELECT * FROM ALMACEN")
     List<AlmacenEntity> getAllAlmacen();
+
+    @Query("SELECT * FROM ALMACEN ORDER BY idAlmacen DESC")
+    List<AlmacenEntity> getAllAlmacenDestino();
 }

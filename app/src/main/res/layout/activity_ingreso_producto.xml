@@ -50,8 +50,6 @@
                 android:layout_height="match_parent">
 
 
-
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayout1"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -60,6 +58,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:layout_marginEnd="16dp"
+                    android:background="#FFFFFF"
                     android:hint="@string/categoriaProducto"
                     android:text="@string/categoriaProducto"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +90,7 @@
                     tools:layout_editor_absoluteY="172dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCantidadProducto"
+                        android:id="@+id/txtNombreProductoReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -117,7 +116,7 @@
                     tools:layout_editor_absoluteY="172dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtPrecioProducto"
+                        android:id="@+id/txtPrecioProductoReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -141,7 +140,7 @@
                     tools:layout_editor_absoluteY="172dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtExistenciaProducto"
+                        android:id="@+id/txtExistenciaProductoReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -174,7 +173,7 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/btnRegistroProducto"
+                android:id="@+id/btnAgregarTraslado"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
