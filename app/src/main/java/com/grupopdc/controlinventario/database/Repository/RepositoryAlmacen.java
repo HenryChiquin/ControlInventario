@@ -7,4 +7,5 @@ import java.util.List;
 public interface RepositoryAlmacen {
     void insert(AlmacenEntity modelAlmacenEntity);
     List<AlmacenEntity> getAllAlmacen();
+    List<AlmacenEntity> getAllAlmacenDestino();
 }

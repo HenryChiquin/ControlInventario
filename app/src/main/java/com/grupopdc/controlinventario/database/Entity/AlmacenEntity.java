@@ -9,6 +9,11 @@ public class AlmacenEntity {
     private String nombre;
     private String ubicacion;
 
+    public AlmacenEntity(int idAlmacen, String nombre) {
+        this.idAlmacen = idAlmacen;
+        this.nombre = nombre;
+    }
+
     public int getIdAlmacen() {
         return idAlmacen;
     }
@@ -31,5 +36,10 @@ public class AlmacenEntity {
 
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

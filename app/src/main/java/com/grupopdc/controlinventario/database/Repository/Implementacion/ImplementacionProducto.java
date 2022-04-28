@@ -22,4 +22,24 @@ public class ImplementacionProducto implements RepositoryProducto {
     public List<ProductoEntity> getallProducto() {
         return productoDao.getallProducto();
     }
+
+    @Override
+    public List<String> getAllMarcasTag() {
+        return productoDao.getAllMarcasTag();
+    }
+
+    @Override
+    public List<ProductoEntity> getAllCodigoSKUNames() {
+        return productoDao.getAllCodigoSKUNames();
+    }
+
+    @Override
+    public List<Integer> getCodigoProductoByProducto(String nombreProducto) {
+        return productoDao.getCodigoProductoByProducto(nombreProducto);
+    }
+
+    @Override
+    public List<String> getCodigoMarcaByMarca(String marcaProducto) {
+        return productoDao.getCodigoMarcaByMarca(marcaProducto);
+    }
 }

@@ -34,6 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".Activities.CatalogoActivity"
+
             android:exported="false" />
         <activity
             android:name=".Activities.MantenimientoProducto"

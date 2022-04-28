@@ -119,7 +119,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCantidadProducto"
+                        android:id="@+id/txtNombreProductoReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -142,7 +142,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtNombre">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCostoProducto"
+                        android:id="@+id/txtCantidadPTraslado"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:singleLine="true"
@@ -161,7 +161,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <Button
-                android:id="@+id/btnRegistroProducto"
+                android:id="@+id/btnAgregarTraslado"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

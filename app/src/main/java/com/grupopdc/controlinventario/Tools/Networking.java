@@ -51,6 +51,7 @@ public class Networking extends LogMessage{
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Log.e("onErorrResponse. Razon: "+error,TAG_CLASS);
+                    responsyBody[0] = "FAIL";
                     latch.countDown();
 
                 }

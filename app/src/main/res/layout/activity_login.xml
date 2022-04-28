@@ -90,7 +90,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
                 <Button
-                    android:id="@+id/btnRegistroProducto"
+                    android:id="@+id/btnAgregarTraslado"
                     style="@style/Widget.Material3.Button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

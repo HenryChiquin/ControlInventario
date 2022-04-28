@@ -8,25 +8,66 @@
     tools:context=".Activities.MenuPrincipal">
 
     <TextView
-        android:id="@+id/tvBienvenido"
-        android:layout_width="wrap_content"
-        android:layout_height="140dp"
+        android:id="@+id/textview_sync"
+        android:layout_width="190dp"
+        android:layout_height="46dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="110dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="112dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/psvtxt_last_sync"
+        android:textColor="#000000"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tvBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="sans-serif-black"
+        android:gravity="center_vertical"
         android:text="Control de Inventario"
         android:textColor="#f4f4fa"
-        android:textSize="30sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="110dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="112dp"
+        android:backgroundTint="@color/cardviewMenuPrincipal"
+        android:gravity="center"
+        android:onClick="evt_sync"
+        android:text="Sincronizar"
+        android:textColor="#504F4F"
+        android:textSize="14sp"
+        app:icon="@drawable/ic_baseline_sync"
+        app:iconSize="30dp"
+        app:iconTint="#504F4F" />
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tvBienvenido"
+        android:layout_below="@+id/textview_sync"
         android:columnCount="2"
+        android:layout_marginTop="55dp"
         android:rowCount="3">
 
         <androidx.cardview.widget.CardView

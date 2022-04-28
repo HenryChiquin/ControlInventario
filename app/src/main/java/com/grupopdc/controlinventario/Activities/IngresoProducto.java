@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,29 +15,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.gson.Gson;
 import com.grupopdc.controlinventario.R;
-import com.grupopdc.controlinventario.database.Entity.AlmacenEntity;
 import com.grupopdc.controlinventario.database.Entity.CategoriaEntity;
 import com.grupopdc.controlinventario.database.Entity.ProductoEntity;
 
@@ -45,7 +33,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
+
 import com.google.firebase.database.DatabaseReference;
 
 import butterknife.BindView;
@@ -55,14 +43,15 @@ import butterknife.ButterKnife;
 public class IngresoProducto extends CoreActivity {
     private static String TAG_CLASS = "INGRESO PRODUCTO CLASS";
     private ImageView imgViewRegresarRegistro;
-    private TextInputEditText NombreP, CostoP,CategoriaP, CantidadP;
-    private TextInputLayout NombreProd;
+    private TextInputEditText nombreProducto, costoProducto, cantidadProducto;
+
     private Button bntRegistro;
-    private Spinner spCategoria,spAlmacen;
+    private Spinner spCategoria;
+    private Handler updateBarHandler;
 
     private List<CategoriaEntity> Listacategoria;
-    private List<AlmacenEntity> Listaalmacen;
 
+    private int idcategoriaresponse;
 
     private static final int File = 1;
     DatabaseReference myRef;
@@ -72,6 +61,9 @@ public class IngresoProducto extends CoreActivity {
     private static final String CARPETA_PRINCIPAL="";
     private static final String CARPETA_IMAGEN="";
     private static final String DIRECTORIO_IMAGEN="";
+    private String requestFetch;
+    private boolean complet_fetch;
+
     List<CategoriaEntity> listas;
     ProgressDialog progress;
 
@@ -89,18 +81,21 @@ public class IngresoProducto extends CoreActivity {
         progress = new ProgressDialog(this);
 
         imgViewRegresarRegistro = findViewById(R.id.imgViewRegresarRegistro);
-        CostoP =  findViewById(R.id.txtPrecioProducto);
-        CategoriaP =  findViewById(R.id.txtCategoriaProducto);
-        CantidadP =  findViewById(R.id.txtExistenciaProducto);
-        bntRegistro =  findViewById(R.id.btnRegistroProducto);
+
+        nombreProducto =  findViewById(R.id.txtNombreProductoReg);
+        costoProducto =  findViewById(R.id.txtPrecioProductoReg);
+        cantidadProducto = findViewById(R.id.txtExistenciaProductoReg);
+
+        bntRegistro =  findViewById(R.id.btnAgregarTraslado);
 
         spCategoria=(Spinner) findViewById(R.id.spCategoria);
-        Listacategoria = new ArrayList<>();
-        Listaalmacen = new ArrayList<>();
 
-        //ListadeCategoria();
+        updateBarHandler = new Handler();
+        Listacategoria = new ArrayList<>();
+
+
+
         listCategoriaSp();
-        //listAlmacenSp();
 
 
         imgViewRegresarRegistro.setOnClickListener(view -> {
@@ -115,74 +110,38 @@ public class IngresoProducto extends CoreActivity {
 
         myRef = FirebaseDatabase.getInstance().getReference();
         mUploadImageView.setOnClickListener(v -> fileUpload());
-        //bntRegistro.setOnClickListener(View-> );
-        //bntRegistro.setOnClickListener(View-> crearAlmacen());
+
+        bntRegistro.setOnClickListener(View-> registrodeDatos());
 
     }
 
-    public void ListadeCategoria(){
-        Listacategoria = repositoryCategoria.getAllCategoriaLista();
-        List<String> lcategoria = new ArrayList<>();
-        for(int index = 0; index < Listacategoria.size(); index++)
-        {
-            CategoriaEntity this_categoria = Listacategoria.get(index);
-            lcategoria.add(this_categoria.getNombre()+" "+this_categoria.getIdCategoria());
-            tools.Log_i("Categoria lista for:" + this_categoria.getNombre() + " :" + this_categoria.getIdCategoria(), "PRODUCTO ACTIVITY");
-        }
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(IngresoProducto.this,
-                android.R.layout.simple_list_item_1,lcategoria);
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spCategoria.setAdapter(myAdapter);
-    }
-
-    public void crearCategoria(){
-        CategoriaEntity categoriaEntity = new CategoriaEntity();
-        categoriaEntity.setIdCategoria(2);
-        categoriaEntity.setNombre("Gaming");
-        repositoryCategoria.insert(categoriaEntity);
-        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
-    }
-
-    public void crearAlmacen(){
-        AlmacenEntity almacenEntity = new AlmacenEntity();
-        almacenEntity.setIdAlmacen(3);
-        almacenEntity.setNombre("C");
-        almacenEntity.setUbicacion("Ciudad de Guatemala");
-        repositoryAlmacen.insert(almacenEntity);
-        Toast.makeText(getApplicationContext(), "Registro con exito", Toast.LENGTH_SHORT).show();
-        crearCategoria();
-    }
 
 
     //LISTA CATEGORIA SPINNER
     public void listCategoriaSp(){
 
         Listacategoria = repositoryCategoria.getAllCategoriaLista();
+        List<CategoriaEntity> listacategoria = new ArrayList<>();
 
-        List<String> lcategoria = new ArrayList<>();
-        for(int index = 0; index < Listacategoria.size(); index++)
+
+        for(CategoriaEntity ct : Listacategoria)
         {
-            CategoriaEntity this_categoria = Listacategoria.get(index);
-            //lcategoria.add(this_categoria.getIdCategoria(),this_categoria.getNombre());
-            lcategoria.add(this_categoria.getIdCategoria() +" "+ this_categoria.getNombre());
-            //lcategoria.add(this_categoria.getNombre());
-
+            int id = ct.getIdCategoria();
+            String nombre = ct.getNombre();
+            listacategoria.add(new CategoriaEntity(id,nombre));
         }
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lcategoria);
+        ArrayAdapter<CategoriaEntity> myAdapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1, listacategoria);
 
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spCategoria.setAdapter(myAdapter);
 
-
-        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
-        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
-
         spCategoria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
             @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
                 String workRequestType = arg0.getItemAtPosition(pos).toString();
-                CantidadP.setText(workRequestType);
-                //String Id = lcategoria.get(pos)
+
+                int Id = listacategoria.get(pos).getIdCategoria();
+                idcategoriaresponse = Id;
             }
             @Override public void onNothingSelected(AdapterView<?> arg0){
 
@@ -190,69 +149,21 @@ public class IngresoProducto extends CoreActivity {
         });
     }
 
-    public void listAlmacenSp(){
-
-        Listaalmacen = repositoryAlmacen.getAllAlmacen();
-
-        List<String> lalmacen = new ArrayList<>();
-        for(int index = 0; index < Listaalmacen.size(); index++)
-        {
-            AlmacenEntity this_almacen = Listaalmacen.get(index);
-            //lcategoria.add(this_categoria.getIdCategoria(),this_categoria.getNombre());
-            lalmacen.add(this_almacen.getIdAlmacen() +" "+ this_almacen.getNombre() +" "+ this_almacen.getUbicacion());
-            //lcategoria.add(this_categoria.getNombre());
-
-        }
-        tools.Log_i("almacen list: "+ lalmacen, "PRODUCTO ACTIVITY");
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, lalmacen);
-
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spAlmacen.setAdapter(myAdapter);
-
-
-        //String itemCategoria =spCategoria.getItemAtPosition(spCategoria.getSelectedItemPosition()).toString();
-        //tools.Log_i("Categoria ID: "+ itemCategoria,"PRODUCTO ACTIVITY");
-
-        spAlmacen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-            @Override public void onItemSelected(AdapterView<?> arg0, View arg1, int pos, long arg3){
-                String workRequestType = arg0.getItemAtPosition(pos).toString();
-                NombreP.setText(workRequestType);
-                //String Id = lcategoria.get(pos)
-            }
-            @Override public void onNothingSelected(AdapterView<?> arg0){
-
-            }
-        });
-    }
 
     public void fileUpload() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         startActivityForResult(intent,File);
     }
-    public void listaDatos(){
 
-        listas = repositoryCategoria.getAllCategoriaLista();
-
-
-
-        for(int index = 0; index < listas.size(); index++) {
-            CategoriaEntity this_categoria = listas.get(index);
-            this_categoria.getIdCategoria();
-            tools.Log_i("Categoria lista for:"+this_categoria.getNombre()+" :" + this_categoria.getIdCategoria(),"PRODUCTO ACTIVITY");
-
-        }
-
-        Toast.makeText(getApplicationContext(), "PPP"+listas, Toast.LENGTH_SHORT).show();
-    }
+    /*[VOLLEY POST]*/
     public void registrodeDatos(){
 
 
-        String nombre = NombreP.getText().toString();
-        String costo = CostoP.getText().toString();
-        String idCategoria = CategoriaP.getText().toString();
-        String cantidad = CantidadP.getText().toString();
+        String nombre = nombreProducto.getText().toString().trim();
+        String costo = costoProducto.getText().toString().trim();
+        int idCategoria = idcategoriaresponse;
+        String cantidad = cantidadProducto.getText().toString().trim();
 
         progress.setTitle("Procesando");
         progress.setMessage("Por favor espere ...");
@@ -268,7 +179,7 @@ public class IngresoProducto extends CoreActivity {
                     productoEntity.setNombre(nombre);
                     productoEntity.setCosto(Float.parseFloat(costo));
                     productoEntity.setCantidad(Integer.parseInt(cantidad));
-                    productoEntity.setIdCategoria(Integer.parseInt(idCategoria));
+                    productoEntity.setIdCategoria(idCategoria);
 
 
                     Gson gson = new Gson();
@@ -278,50 +189,41 @@ public class IngresoProducto extends CoreActivity {
 
                     String urlWS = PATH_REGISTRO;
                     String response = tools.usedNetworking().post_http_request(urlWS,jsonObject);
-                    Toast.makeText(getApplicationContext(),"Response "+response, Toast.LENGTH_SHORT).show();
+                    JSONObject object = new JSONObject(response);
+                    if(!response.equals("FAIL")){
+                        requestFetch = object.get("mensaje").toString();
+                        complet_fetch = true;
+                    }else{
+                        complet_fetch = false;
+                    }
+
+
 
                 } catch (Exception ex) {
 
                 }
                 progress.dismiss();
+                updateBarHandler.post(runnableUi);
             }
         });
         thread.start();
 
     }
 
-    /*[VOLLEY POST]*/
-    public String POST_HTTP_REQUEST(final String  s_url, final JSONObject jsonBody){
-        final CountDownLatch latch = new CountDownLatch(1);
-        final String[] responsyBody = new String[1];
-        try{
-            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,s_url,jsonBody,new Response.Listener<JSONObject>(){
-                @Override
-                public void onResponse(JSONObject response) {
-                    responsyBody[0] = response.toString();
-                    latch.countDown();
-                    Log.i("POST_HTTP_REQUEST", response.toString());
-                }
-            },new Response.ErrorListener(){
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("onErorrResponse. Razon: "+error,TAG_CLASS);
-                    latch.countDown();
+    Runnable runnableUi = new  Runnable(){
+        @Override
+        public void run() {
+            // Escriba aquí la operación de actualización de la interfaz de usuario
+            if(complet_fetch){
+                tools.MakeToast(requestFetch);
 
-                }
-            });
-            requestQueue.add(jsonObjectRequest);
-            latch.await();
-
-        }catch (Exception e) {
-            e.printStackTrace();
-            Log.e("POST_HTTP_REQUEST general volley", e.toString());
-            responsyBody[0] = e.toString();
+            }else{
+                tools.MakeToast("Error al momento de registrar");
+            }
         }
-        return responsyBody[0];
+    };
 
-    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
