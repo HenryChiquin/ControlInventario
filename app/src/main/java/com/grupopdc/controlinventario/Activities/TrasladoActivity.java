@@ -177,7 +177,7 @@ public class TrasladoActivity extends CoreActivity {
             // Escriba aquí la operación de actualización de la interfaz de usuario
             if(complet_fetch){
                 tools.MakeToast(requestFetch);
-
+                qkcache.LIST_TRASLADO.clear();
             }else{
                 tools.MakeToast("Error al momento de registrar");
             }
