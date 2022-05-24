@@ -1,6 +1,7 @@
 package com.grupopdc.controlinventario.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -41,17 +42,7 @@ public class CatalogoActivity extends CoreActivity {
             //lcategoria.add(this_categoria.getNombre());
 
         }
-//        names = new ArrayList<String>();
-//        names.add("Producto 1");
-//        names.add("Producto 2");
-//        names.add("Producto 3");
-//        names.add("Producto 4");
-//        names.add("Producto 5");
-//        names.add("Producto 6");
-//        names.add("Producto 7");
-//        names.add("Producto 8");
-//        names.add("Producto 9");
-//        names.add("Producto 10");
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,lcategoria);
         listaProductoP.setAdapter(adapter);
 
@@ -59,6 +50,7 @@ public class CatalogoActivity extends CoreActivity {
             onBackPressed();
         });
     }
+
 
 
 

@@ -41,7 +41,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSincronizar"
         style="@style/Widget.Material3.Button"
         android:layout_width="188dp"
         android:layout_height="wrap_content"

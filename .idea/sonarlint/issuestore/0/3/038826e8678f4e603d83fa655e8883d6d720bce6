@@ -1,0 +1,18 @@
+
+ƒ
+java:S1450"fRemove the "imgViewRegresarCatalogo" field and declare it as a local variable in the relevant methods.(©‡şÆ8š¹Ç†0
+y
+java:S1450"\Remove the "listaProducto" field and declare it as a local variable in the relevant methods.(…÷ 8š¹Ç†0
+z
+java:S1450"]Remove the "listaProductoP" field and declare it as a local variable in the relevant methods.(“âß¨8›¹Ç†0
+X	java:S125'"<This block of commented-out lines of code should be removed.(­ú8ª¹Ç†0
+X	java:S125)"<This block of commented-out lines of code should be removed.(“‰ÈÖ8«¹Ç†0
+]	java:S125,"<This block of commented-out lines of code should be removed.(ÙëÉûÿÿÿÿ8«¹Ç†0
+I
+java:S1602:",Remove useless curly braces around statement(şÅî©8­¹Ç†0
+F
+java:S1068")Remove this unused "names" private field.(Ûıé8²¹Ç†0
+{
+java:S22937"YReplace the type specification in this constructor call with the diamond operator ("<>").(—äÓÏùÿÿÿÿ8´¹Ç†0
+m	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó›ƒ8µ¹Ç†0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢¦†Æ8·¹Ç†0

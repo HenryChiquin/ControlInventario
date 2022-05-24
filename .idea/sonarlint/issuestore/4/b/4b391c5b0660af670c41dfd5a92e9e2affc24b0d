@@ -1,0 +1,6 @@
+
+y
+java:S1450"cRemove the "imgViewRegresarVenta" field and declare it as a local variable in the relevant methods.(„ò‹Ç
+G
+java:S1602",Remove useless curly braces around statement(ª†ÝÕøÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢¦†Æ

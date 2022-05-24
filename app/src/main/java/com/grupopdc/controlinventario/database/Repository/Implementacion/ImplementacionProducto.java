@@ -42,4 +42,11 @@ public class ImplementacionProducto implements RepositoryProducto {
     public List<String> getCodigoMarcaByMarca(String marcaProducto) {
         return productoDao.getCodigoMarcaByMarca(marcaProducto);
     }
+
+    @Override
+    public float getCostoByIdProducto(int idProducto) {
+        return productoDao.getCostoByIdProducto(idProducto);
+    }
+
+
 }

@@ -1,0 +1,60 @@
+
+u
+java:S3008"XRename this field "LIST_PRODUCTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­¨ğğ8ı™Ç€0
+v
+java:S3008"YRename this field "LIST_CATEGORIA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ëƒõ8ı™Ç€0
+t
+java:S3008"WRename this field "LIST_ALMACEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´óÄÅ8ş™Ç€0
+{
+java:S3008"YRename this field "LIST_PROVEEDOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎíŞ©ùÿÿÿÿ8ş™Ç€0
+{
+java:S3008"YRename this field "LIST_IMPUESTOS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú±µ€şÿÿÿÿ8‹öÇ€0
+u
+java:S3008"XRename this field "LIST_TRASLADO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¿Ô¥8¶œ«ğ†0
+s
+java:S3008"VRename this field "LIST_MONEDA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬îâÖ8ÈÈßÛ‰0
+W
+java:S1118":Add a private constructor to hide the implicit public one.(ïÜü²8Àœ«ğ†0
+Š
+java:S1319"mThe type of "LIST_PRODUCTO" should be an interface such as "List" rather than the implementation "ArrayList".(­¨ğğ8¨ŠÄ€0
+‹
+java:S1319"nThe type of "LIST_CATEGORIA" should be an interface such as "List" rather than the implementation "ArrayList".(©ëƒõ8‘šÇ€0
+‰
+java:S1319"lThe type of "LIST_ALMACEN" should be an interface such as "List" rather than the implementation "ArrayList".(´óÄÅ8‘šÇ€0
+
+java:S1319"nThe type of "LIST_PROVEEDOR" should be an interface such as "List" rather than the implementation "ArrayList".(ÎíŞ©ùÿÿÿÿ8’šÇ€0
+
+java:S1319"nThe type of "LIST_IMPUESTOS" should be an interface such as "List" rather than the implementation "ArrayList".(Ú±µ€şÿÿÿÿ8Ëœ«ğ†0
+Š
+java:S1319"mThe type of "LIST_TRASLADO" should be an interface such as "List" rather than the implementation "ArrayList".(³¿Ô¥8Ìœ«ğ†0
+ˆ
+java:S1319"kThe type of "LIST_MONEDA" should be an interface such as "List" rather than the implementation "ArrayList".(¬îâÖ8êÈßÛ‰0
+v
+java:S1104"YMake LIST_PRODUCTO a static final constant or non-public and provide accessors if needed.(­¨ğğ8“šÇ€0
+w
+java:S1104"ZMake LIST_CATEGORIA a static final constant or non-public and provide accessors if needed.(©ëƒõ8“šÇ€0
+u
+java:S1104"XMake LIST_ALMACEN a static final constant or non-public and provide accessors if needed.(´óÄÅ8“šÇ€0
+|
+java:S1104"ZMake LIST_PROVEEDOR a static final constant or non-public and provide accessors if needed.(ÎíŞ©ùÿÿÿÿ8“šÇ€0
+|
+java:S1104"ZMake LIST_IMPUESTOS a static final constant or non-public and provide accessors if needed.(Ú±µ€şÿÿÿÿ8œöÇ€0
+v
+java:S1104"YMake LIST_TRASLADO a static final constant or non-public and provide accessors if needed.(³¿Ô¥8Íœ«ğ†0
+t
+java:S1104"WMake LIST_MONEDA a static final constant or non-public and provide accessors if needed.(¬îâÖ8ëÈßÛ‰0
+P
+java:S1444"3Make this "public static LIST_PRODUCTO" field final(­¨ğğ8”šÇ€0
+Q
+java:S1444"4Make this "public static LIST_CATEGORIA" field final(©ëƒõ8”šÇ€0
+O
+java:S1444"2Make this "public static LIST_ALMACEN" field final(´óÄÅ8•šÇ€0
+V
+java:S1444"4Make this "public static LIST_PROVEEDOR" field final(ÎíŞ©ùÿÿÿÿ8•šÇ€0
+V
+java:S1444"4Make this "public static LIST_IMPUESTOS" field final(Ú±µ€şÿÿÿÿ8öÇ€0
+P
+java:S1444"3Make this "public static LIST_TRASLADO" field final(³¿Ô¥8Îœ«ğ†0
+N
+java:S1444"1Make this "public static LIST_MONEDA" field final(¬îâÖ8ìÈßÛ‰0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óˆƒ

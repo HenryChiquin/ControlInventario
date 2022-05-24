@@ -1,0 +1,8 @@
+
+W
+java:S1118":Add a private constructor to hide the implicit public one.(‹õ—°8øŞŠ€0
+n
+java:S1104"QMake tools a static final constant or non-public and provide accessors if needed.(¼âèÛ8•ßŠ€0
+H
+java:S1444"+Make this "public static tools" field final(¼âèÛ8–ßŠ€0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±¿æ¸

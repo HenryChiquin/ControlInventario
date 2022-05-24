@@ -39,5 +39,57 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Reportes</string>
+    <string name="menu_slideshow">Ajustes</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+    <!--    SAVE PREFERENS-->
+    <string name="pref_MODE_OFFLINE">MODE_OFFLINE</string>
+
+    <!--    TOASTS MESSAGES-->
+    <string name="toast_mode_offline_activate">Modo Offline activado</string>
+    <string name="psvtxt_error_tryagain">Se ha producido un error, vuelva a intentar</string>
+    <string name="psvtxt_internetfail">No hay conexión a internet</string>
+
+
+    <!--  LOGIN  -->
+    <string name="pref_SESION">SESION</string>
+    <string name="pref_IDUSER">IDUSER</string>
+    <string name="pref_USERNAME">USERNAME</string>
+    <string name="pref_ACCESS_TOKEN">ACCESS_TOKEN</string>
+    <string name="pref_USER_EMPRESA">USER_EMPRESA</string>
+    <string name="pref_USER_PERFIL">USER_PERFIL</string>
+    <string name="pref_USER_ID_PERFIL">USER_ID_PERFIL</string>
+    <string name="pref_USER_PAIS">USER_PAIS</string>
+    <string name="pref_USER_ID_PAIS">USER_ID_PAIS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_lista_empresa">ListaEmpresaActivity</string>
+    <string name="title_activity_list_empresa">ListEmpresaActivity</string>
+    <string name="title_activity_empresa_lista">EmpresaListaActivity</string>
+
 
 </resources>

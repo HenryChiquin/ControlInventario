@@ -1,6 +1,6 @@
 package com.grupopdc.controlinventario.Api;
 
-import static com.grupopdc.controlinventario.Tools.KeysRoutes.PATH_GET_ALL_DATA;
+import static com.grupopdc.controlinventario.Tools.KeysRoutes.PATH_INVENTORYCONTROL;
 
 import com.google.gson.GsonBuilder;
 import com.grupopdc.controlinventario.Tools.DateDeserializer;
@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGeneratorGetAllData {
     public static Tools tools;
-    private static final String API_BASE_URL = PATH_GET_ALL_DATA;
+    private static final String API_BASE_URL = PATH_INVENTORYCONTROL;
 
 
     private static GsonBuilder gsonBuilder = new GsonBuilder()

@@ -10,8 +10,9 @@
         </shape>
     </item>
     <item android:top="230dp"
-        android:bottom="-100dp"
-        android:right="-400dp">
+        android:bottom="-210dp"
+        android:left="-200dp"
+        android:right="-200dp">
         <rotate
             android:fromDegrees="0"
             android:pivotY="200%">
@@ -20,6 +21,7 @@
                     android:angle="-45"
                     android:startColor="#FFFFFF"
                     android:endColor="#FFFFFF"
+
                     android:type="linear" />
             </shape>
         </rotate>

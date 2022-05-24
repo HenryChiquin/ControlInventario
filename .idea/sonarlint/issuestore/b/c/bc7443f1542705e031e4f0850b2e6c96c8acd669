@@ -1,0 +1,127 @@
+
+v
+java:S3008#"TRename this field "TAG_CLASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±‡æ÷ıÿÿÿÿ8ƒò«ÓŠ0
+x
+java:S30080"VRename this field "PREF_SESION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°Œ¨´úÿÿÿÿ8…ŒŠ0
+u
+java:S30081"XRename this field "PREF_USERNAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬›‚¬8›ìğ‹Š0
+x
+java:S30082"\Rename this field "PREF_ACCESS_TOKEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÓø8›ìğ‹Š0
+y
+java:S30083"WRename this field "PREF_EMPRESA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ®×øÿÿÿÿ8§Àô‹Š0
+x
+java:S30084"VRename this field "PREF_PERFIL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷ÅĞ¯ùÿÿÿÿ8¡“ö‹Š0
+{
+java:S30085"YRename this field "PREF_ID_PERFIL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùØóıÿÿÿÿÿ8ÇâŒŠ0
+q
+java:S30086"TRename this field "PREF_PAIS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¾ùÈ8Õ…÷‹Š0
+y
+java:S30087"WRename this field "PREF_ID_PAIS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×ã‰öúÿÿÿÿ8–Ô÷‹Š0
+w
+java:S3008:"\Rename this field "PREF_MODE_OFFLINE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ääÖØıÿÿÿÿ
+Q
+java:S2696A"6Make the enclosing method "static" or remove this set.(­­£üùÿÿÿÿ
+c	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞíóÔ
+K
+java:S2696X"6Make the enclosing method "static" or remove this set.( ïá
+L
+java:S2696Z"6Make the enclosing method "static" or remove this set.(¦ÔÅú
+Q
+java:S2696["6Make the enclosing method "static" or remove this set.(Ø××Ôÿÿÿÿÿ
+Q
+java:S2696\"6Make the enclosing method "static" or remove this set.(’İ¾ßşÿÿÿÿ
+Q
+java:S2696]"6Make the enclosing method "static" or remove this set.(ã¿üÙùÿÿÿÿ
+Q
+java:S2696^"6Make the enclosing method "static" or remove this set.(ª«£•úÿÿÿÿ
+L
+java:S2696_"6Make the enclosing method "static" or remove this set.(é¾½Û
+Q
+java:S2696a"6Make the enclosing method "static" or remove this set.(ĞÓ¾œùÿÿÿÿ
+S
+java:S2696d"6Make the enclosing method "static" or remove this set.(ï²Ûí8üû§ÓŠ0
+X
+java:S2696e"6Make the enclosing method "static" or remove this set.(åäâğşÿÿÿÿ8ÿû§ÓŠ0
+S
+java:S2696f"6Make the enclosing method "static" or remove this set.(§®òá8ü§ÓŠ0
+X
+java:S2696g"6Make the enclosing method "static" or remove this set.(Üª¦üÿÿÿÿ8ƒü§ÓŠ0
+R
+java:S2696h"6Make the enclosing method "static" or remove this set.(¶†k8…ü§ÓŠ0
+X
+java:S2696i"6Make the enclosing method "static" or remove this set.(¿¼´Àúÿÿÿÿ8‡ü§ÓŠ0
+X
+java:S2696j"6Make the enclosing method "static" or remove this set.(Îşùòıÿÿÿÿ8‰ü§ÓŠ0
+X
+java:S2696k"6Make the enclosing method "static" or remove this set.(‘æÖ¸üÿÿÿÿ8‹ü§ÓŠ0
+l
+java:S1104$"QMake tools a static final constant or non-public and provide accessors if needed.(§àøûÿÿÿÿ
+i
+java:S1104%"SMake qkcache a static final constant or non-public and provide accessors if needed.(êò“¸
+m
+java:S1104'"WMake appDataBase a static final constant or non-public and provide accessors if needed.(²çØ¬
+y
+java:S1104)"^Make repositoryProducto a static final constant or non-public and provide accessors if needed.(Ğ…¸¼ıÿÿÿÿ
+z
+java:S1104*"_Make repositoryCategoria a static final constant or non-public and provide accessors if needed.(î›÷£úÿÿÿÿ
+x
+java:S1104+"]Make repositoryAlmacen a static final constant or non-public and provide accessors if needed.(”£©Íøÿÿÿÿ
+u
+java:S1104,"_Make repositoryProveedor a static final constant or non-public and provide accessors if needed.(Ã øÆ
+y
+java:S1104-"^Make repositoryImpuesto a static final constant or non-public and provide accessors if needed.(ÆèäŠøÿÿÿÿ
+q
+java:S1104."\Make repositoryMoneda a static final constant or non-public and provide accessors if needed.(óÚÏn
+y
+java:S11040"WMake PREF_SESION a static final constant or non-public and provide accessors if needed.(°Œ¨´úÿÿÿÿ8ŒŠ0
+v
+java:S11041"YMake PREF_USERNAME a static final constant or non-public and provide accessors if needed.(¬›‚¬8şìğ‹Š0
+y
+java:S11042"]Make PREF_ACCESS_TOKEN a static final constant or non-public and provide accessors if needed.(àÓø8şìğ‹Š0
+z
+java:S11043"XMake PREF_EMPRESA a static final constant or non-public and provide accessors if needed.(æ®×øÿÿÿÿ8ûÀô‹Š0
+y
+java:S11044"WMake PREF_PERFIL a static final constant or non-public and provide accessors if needed.(÷ÅĞ¯ùÿÿÿÿ8ƒ”ö‹Š0
+|
+java:S11045"ZMake PREF_ID_PERFIL a static final constant or non-public and provide accessors if needed.(ùØóıÿÿÿÿÿ8ºãŒŠ0
+r
+java:S11046"UMake PREF_PAIS a static final constant or non-public and provide accessors if needed.(‚¾ùÈ8·†÷‹Š0
+z
+java:S11047"XMake PREF_ID_PAIS a static final constant or non-public and provide accessors if needed.(×ã‰öúÿÿÿÿ8‹Õ÷‹Š0
+x
+java:S1104:"]Make PREF_MODE_OFFLINE a static final constant or non-public and provide accessors if needed.(ääÖØıÿÿÿÿ
+C
+java:S1444%"-Make this "public static qkcache" field final(êò“¸
+G
+java:S1444'"1Make this "public static appDataBase" field final(²çØ¬
+S
+java:S1444)"8Make this "public static repositoryProducto" field final(Ğ…¸¼ıÿÿÿÿ
+T
+java:S1444*"9Make this "public static repositoryCategoria" field final(î›÷£úÿÿÿÿ
+R
+java:S1444+"7Make this "public static repositoryAlmacen" field final(”£©Íøÿÿÿÿ
+O
+java:S1444,"9Make this "public static repositoryProveedor" field final(Ã øÆ
+S
+java:S1444-"8Make this "public static repositoryImpuesto" field final(ÆèäŠøÿÿÿÿ
+K
+java:S1444."6Make this "public static repositoryMoneda" field final(óÚÏn
+S
+java:S14440"1Make this "public static PREF_SESION" field final(°Œ¨´úÿÿÿÿ8„ŒŠ0
+P
+java:S14441"3Make this "public static PREF_USERNAME" field final(¬›‚¬8€íğ‹Š0
+S
+java:S14442"7Make this "public static PREF_ACCESS_TOKEN" field final(àÓø8€íğ‹Š0
+T
+java:S14443"2Make this "public static PREF_EMPRESA" field final(æ®×øÿÿÿÿ8ıÀô‹Š0
+S
+java:S14444"1Make this "public static PREF_PERFIL" field final(÷ÅĞ¯ùÿÿÿÿ8†”ö‹Š0
+V
+java:S14445"4Make this "public static PREF_ID_PERFIL" field final(ùØóıÿÿÿÿÿ8¿ãŒŠ0
+L
+java:S14446"/Make this "public static PREF_PAIS" field final(‚¾ùÈ8º†÷‹Š0
+T
+java:S14447"2Make this "public static PREF_ID_PAIS" field final(×ã‰öúÿÿÿÿ8Õ÷‹Š0
+R
+java:S1444:"7Make this "public static PREF_MODE_OFFLINE" field final(ääÖØıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢¦†Æ

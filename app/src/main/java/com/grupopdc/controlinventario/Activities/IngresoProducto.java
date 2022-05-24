@@ -216,7 +216,7 @@ public class IngresoProducto extends CoreActivity {
             // Escriba aquí la operación de actualización de la interfaz de usuario
             if(complet_fetch){
                 tools.MakeToast(requestFetch);
-
+                clean();
             }else{
                 tools.MakeToast("Error al momento de registrar");
             }
@@ -256,5 +256,13 @@ public class IngresoProducto extends CoreActivity {
 
         }
 
+    }
+
+    //CLENA
+    private void clean(){
+        listCategoriaSp();
+        nombreProducto.setText("");
+        costoProducto.setText("");
+        cantidadProducto.setText("");
     }
 }

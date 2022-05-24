@@ -42,7 +42,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btnCompra"
+            android:id="@+id/btnRepoVenta"
             style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnVenta"
+            android:id="@+id/btnRepoCompra"
             style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btnTraslado"
+            android:id="@+id/btnRepoTrslado"
             style="@style/Widget.Material3.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

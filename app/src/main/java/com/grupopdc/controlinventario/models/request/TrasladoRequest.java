@@ -6,6 +6,15 @@ public class TrasladoRequest {
     private int IdAlmacenOrigen;
     private int IdAlmacenDestino;
 
+    public TrasladoRequest() {
+    }
+
+    public TrasladoRequest(int idProducto, int cantidad, int idAlmacenOrigen, int idAlmacenDestino) {
+        IdProducto = idProducto;
+        Cantidad = cantidad;
+        IdAlmacenOrigen = idAlmacenOrigen;
+        IdAlmacenDestino = idAlmacenDestino;
+    }
 
     public int getIdProducto() {
         return IdProducto;

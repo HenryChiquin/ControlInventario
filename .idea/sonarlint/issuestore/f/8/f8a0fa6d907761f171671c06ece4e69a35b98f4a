@@ -1,0 +1,44 @@
+
+|	java:S116"bRename this field "TIMEOUT_DEF_CONNNECTION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î„¹íüÿÿÿÿ
+y	java:S116"dRename this field "TIMEOUT_DEF_RESPONSE_DATA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÖâÈ
+r	java:S116"]Rename this field "TIMEOUT_CONNECTION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Ù†
+z	java:S116"`Rename this field "TIMEOUT_RESPONSE_DATA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë½íúÿÿÿÿ
+o
+java:S3008"TRename this field "TAG_CLASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¶Ö‰ÿÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(î„¹íüÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ùÖâÈ
+w
+java:S1450"aRemove the "TIMEOUT_CONNECTION" field and declare it as a local variable in the relevant methods.(™Ù†
+
+java:S1450"dRemove the "TIMEOUT_RESPONSE_DATA" field and declare it as a local variable in the relevant methods.(ë½íúÿÿÿÿ
+h	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ç¤÷øÿÿÿÿ
+c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜±¶
+t
+java:S2142>"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+I
+java:S1874K"3Remove this use of "NetworkInfo"; it is deprecated.(¾¬
+R
+java:S1874K"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(¾¬
+U
+java:S1874L"?Remove this use of "isConnectedOrConnecting"; it is deprecated.(¦¼¤ï
+R
+java:S1874L"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(¦¼¤ï
+I
+java:S1874L"3Remove this use of "isAvailable"; it is deprecated.(¦¼¤ï
+R
+java:S1874L"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(¦¼¤ï
+I
+java:S1874L"3Remove this use of "isConnected"; it is deprecated.(¦¼¤ï
+L
+java:S1068"6Remove this unused "TIMEOUT_CONNECTION" private field.(™Ù†
+T
+java:S1068"9Remove this unused "TIMEOUT_RESPONSE_DATA" private field.(ë½íúÿÿÿÿ
+k	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ç¤÷øÿÿÿÿ
+k	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ç¤÷øÿÿÿÿ
+C
+java:S1604+"(Make this anonymous inner class a lambda(¿ã®şÿÿÿÿ
+C
+java:S16042"(Make this anonymous inner class a lambda(´¸©”üÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óˆƒ

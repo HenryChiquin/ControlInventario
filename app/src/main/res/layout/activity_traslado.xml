@@ -105,7 +105,7 @@
                     app:srcCompat="@drawable/ic_baseline_clear_all_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputLayout1"
+                    android:id="@+id/textIdEmpresa"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtNombre"
+                    android:id="@+id/txtCuentaUser"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
                     android:text="Cantidad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout1">
+                    app:layout_constraintTop_toBottomOf="@+id/textIdEmpresa">
 
                     <Spinner
                         android:id="@+id/spDestino"
@@ -160,12 +160,13 @@
                     android:text="Cantidad"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtNombre">
+                    app:layout_constraintTop_toBottomOf="@+id/txtCuentaUser">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtCantidadPTraslado"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="number"
                         android:singleLine="true"
                         android:textSize="18sp" />
 
@@ -178,7 +179,7 @@
                     android:layout_marginTop="96dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtCuentaUser" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -6,6 +6,7 @@ import static com.grupopdc.controlinventario.Tools.KeysRoutes.PATH_REGISTRO_TRAS
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -24,8 +25,11 @@ import com.grupopdc.controlinventario.R;
 import com.grupopdc.controlinventario.database.Entity.AlmacenEntity;
 import com.grupopdc.controlinventario.database.Entity.CategoriaEntity;
 import com.grupopdc.controlinventario.database.Entity.ProductoEntity;
+import com.grupopdc.controlinventario.database.Entity.TrasladoDetalleEntity;
+import com.grupopdc.controlinventario.database.Entity.VentaDetalleEntity;
 import com.grupopdc.controlinventario.models.request.TrasladoGeneralRequest;
 import com.grupopdc.controlinventario.models.request.TrasladoRequest;
+import com.grupopdc.controlinventario.models.request.VentaDetalleRequest;
 
 import org.json.JSONObject;
 
@@ -126,6 +130,7 @@ public class TrasladoActivity extends CoreActivity {
             send_traslado();
         });
     }
+
     private void send_traslado(){
 
         progress.setTitle("Procesando");
@@ -140,6 +145,18 @@ public class TrasladoActivity extends CoreActivity {
 
 
                     Gson gson = new Gson();
+
+                    for(int i=0; i<repositoryTrasladoDetalle.getAllTraslado().size();i++){
+                        TrasladoDetalleEntity trasladoDetalleEntity = repositoryTrasladoDetalle.getAllTraslado().get(i);
+
+
+                        qkcache.LIST_TRASLADO.add(new TrasladoRequest(
+                                trasladoDetalleEntity.getIdProducto(),
+                                trasladoDetalleEntity.getCantidad(),
+                                trasladoDetalleEntity.getIdAlmacenOrigen(),
+                                trasladoDetalleEntity.getIdAlmacenDestino()
+                        ));
+                    }
 
                     TrasladoGeneralRequest trasladoGeneralRequest = new TrasladoGeneralRequest(
                                                 ""+tools.PedidoKey(),
@@ -178,6 +195,10 @@ public class TrasladoActivity extends CoreActivity {
             if(complet_fetch){
                 tools.MakeToast(requestFetch);
                 qkcache.LIST_TRASLADO.clear();
+                repositoryTrasladoDetalle.deleteTraslado();
+                startActivity(new Intent(getBaseContext(), OperacionesActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                finish();
             }else{
                 tools.MakeToast("Error al momento de registrar");
             }
@@ -186,15 +207,41 @@ public class TrasladoActivity extends CoreActivity {
 
 
     private void agregarRegistro(){
+
+
+
+        for(int i=0;i < qkcache.LIST_TRASLADO.size();i++){
+            TrasladoRequest trasladoRequestinterno = qkcache.LIST_TRASLADO.get(i);
+            tools.Log_i("ID ALMACEN: "+ trasladoRequestinterno.getIdProducto(), TAG_CLASS);
+           /* if(trasladoRequestinterno.getIdProducto()==trasladoRequest.getIdProducto()){
+                tools.MakeToast("El producto ya fue seleccionado..");
+                clean();
+                return;
+            }*/
+        }
+        if (trasladoRequest.getIdProducto()==0) {
+            autoCompleteProducto.setError("El campo está vacío");
+            return;
+        }
+        String cnat = txtCantidadPTraslado.getText().toString();
+        if(cnat.isEmpty()){
+            txtCantidadPTraslado.setError("El campo está vacío");
+            return;
+        }
         Gson gson = new Gson();
         int cantidad = Integer.parseInt(txtCantidadPTraslado.getText().toString());
 
         trasladoRequest.setCantidad(cantidad);
+        TrasladoDetalleEntity trasladoDetalleEntity = new TrasladoDetalleEntity();
 
-        qkcache.LIST_TRASLADO.add(trasladoRequest);
-        txtCantidadDetalle.setText(""+qkcache.LIST_TRASLADO.size());
-        tools.Log_i("DETALLE ALMACEN: "+gson.toJson(qkcache.LIST_TRASLADO), TAG_CLASS);
-        tools.Log_i("DETALLE size: "+qkcache.LIST_TRASLADO.size(), TAG_CLASS);
+        trasladoDetalleEntity.setIdProducto(trasladoRequest.getIdProducto());
+        trasladoDetalleEntity.setCantidad(trasladoRequest.getCantidad());
+        trasladoDetalleEntity.setIdAlmacenDestino(trasladoRequest.getIdAlmacenDestino());
+        trasladoDetalleEntity.setIdAlmacenOrigen(trasladoRequest.getIdAlmacenOrigen());
+        repositoryTrasladoDetalle.insert(trasladoDetalleEntity);
+        txtCantidadDetalle.setText(""+repositoryTrasladoDetalle.getAllTraslado().size());
+
+        clean();
     }
     private void SearchByQuery(String entry){
         tools.Log_i("ENTRY [" + entry + "]", TAG_CLASS);
@@ -262,6 +309,7 @@ public class TrasladoActivity extends CoreActivity {
         //closePopup();
         //ReconstructPool(query, flag_type_int, flag_focus, codigo_sku);
     }
+
     private void spOrigenList(){
         listItemAlmacen = repositoryAlmacen.getAllAlmacen();
         List<AlmacenEntity> listaAlmacenOrigen = new ArrayList<>();
@@ -353,6 +401,19 @@ public class TrasladoActivity extends CoreActivity {
             searchList.add(valores);
 
         }
+
+
+    }
+
+    private void clean(){
+
+        spOrigenList();
+        spDestinoList();
+        autoCompleteProducto.setText("");
+
+
+        //autoCompleteProducto.setFocusable(true);
+        txtCantidadPTraslado.setText("");
 
 
     }

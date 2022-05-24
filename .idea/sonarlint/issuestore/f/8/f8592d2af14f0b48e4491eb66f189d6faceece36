@@ -1,0 +1,19 @@
+
+o	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þçÓªÿÿÿÿÿ8‹Óîã†0
+j	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÌÍê8ß©†ò†0
+o
+java:S1128"SRemove this unused import 'com.grupopdc.controlinventario.Activities.CoreActivity'.(Ïëé8Õˆ˜Ü‰0
+I
+java:S1068"'Remove this unused "ctx" private field.(ÖÖ¾­þÿÿÿÿ8’ÎðÊ†0
+r	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÍ€Áÿÿÿÿÿ8í©†ò†0
+r	java:S117<"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’øôäüÿÿÿÿ8î©†ò†0
+r	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(š‘ìñþÿÿÿÿ8î©†ò†0
+m	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­—¹Ê8î©†ò†0
+m	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—÷©Í8ß¦Ó×‰0
+v
+java:S14884"YImmediately return this expression instead of assigning it to the temporary variable "r".(ðÉ¦¾8ìïã†0
+z
+java:S1488>"]Immediately return this expression instead of assigning it to the temporary variable "rev_c".(­—¹Ê8ð©†ò†0
+
+java:S1488E"bImmediately return this expression instead of assigning it to the temporary variable "url_server".(—÷©Í8•‹Ô×‰0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(óˆŽƒ

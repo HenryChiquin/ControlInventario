@@ -13,4 +13,6 @@ public interface RepositoryProducto {
     List<Integer> getCodigoProductoByProducto(String nombreProducto);
     List<String> getCodigoMarcaByMarca(String marcaProducto);
 
+    float getCostoByIdProducto(int idProducto);
+
 }

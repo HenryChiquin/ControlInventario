@@ -27,6 +27,9 @@ public interface ProductoDao {
     @Query("SELECT idProducto FROM PRODUCTO WHERE nombre IN (:nombreProducto)")
     List<Integer> getCodigoProductoByProducto(String nombreProducto);
 
+    @Query("SELECT costo FROM PRODUCTO WHERE idProducto IN (:idProducto)")
+    float getCostoByIdProducto(int idProducto);
+
 
     @Query("SELECT DISTINCT nombre FROM PRODUCTO WHERE nombre = :marcaProducto")
     List<String> getCodigoMarcaByMarca(String marcaProducto);

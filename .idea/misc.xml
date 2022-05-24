@@ -3,24 +3,47 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable-v24/background_nav.xml" value="0.28125" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable-v24/ic_baseline_settings.xml" value="0.28125" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable-v24/ic_baseline_sync.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.28125" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/background_main_principal.xml" value="0.28125" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/background_register_products.xml" value="0.28125" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/ic_baseline_cloud_upload_24.xml" value="0.27692307692307694" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/ic_baseline_person_add_24.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/ic_icon_logo.xml" value="0.33" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.28125" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_agregar_empresa.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_agregar_usuario.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_catalogo.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_catalogo_producto.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_compra.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_consulta.xml" value="0.25104166666666666" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_ingreso_producto.xml" value="0.25" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_lista_empresa.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_main.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_mantenimiento_producto.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_menu_principal.xml" value="0.33" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_operaciones.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_reporte_traslado.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_salidad_productos.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_settings.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_traslado.xml" value="0.25" />
         <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/activity_venta.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/app_bar_settings.xml" value="0.33" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/content_settings.xml" value="0.33" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/fragment_configuration.xml" value="0.25104166666666666" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/fragment_home.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/fragment_slideshow.xml" value="0.33" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/item_list.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/item_reabasto.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/nav_header_settings.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/layout/tarjeta_opciones.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/menu/activity_main_drawer.xml" value="0.67" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/menu/settings.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/HACC/AndroidStudioProjects/UMG/app/src/main/res/xml/root_preferences.xml" value="0.33" />
         <entry key="..\:/Users/HACC/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_catalogo.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Hazael Hernandez/AndroidStudioProjects/ControlInventario/app/src/main/res/layout/activity_compra.xml" value="0.22" />
